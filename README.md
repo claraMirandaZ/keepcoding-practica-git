@@ -52,9 +52,15 @@ y líbranos de *SVN*
 
 11) Deshacer el último commit (perdiendo los cambios realizados en el working copy).
 
+` git reset —hard HEAD~ 1 para descartar los cambios realizados `
+
 12) Rehacer el último commit (el que acabamos de deshacer).
 
+` git refog y luego reset —hard HASH_COMMIT_PASO_10 para recuperar los cambios realizados `
+
 13) Hacer un merge con _master_ (styled absorbe a master).
+
+` No, porque no se ha realizado ningún merge ya que los commits de master ya están contenidos en la rama styled `
 
 14) Volver a la rama _master_.
 
@@ -81,9 +87,13 @@ y líbranos de <em>SVN</em><br />
 
 19) Hacer un merge de _htmlify_ en _styled_ (_styled_ absorbe a _htmlify_).
 
+` Sí, tocamos el mismo archivo en la misma línea en dos ramas diferentes `
+
 20) Si hay conflictos, deberemos resolverlos quedándonos con el contenido de la rama _styled_.
 
 21) Desde _master_, hacer un merge con _styled_.
+
+` No, porque en master no hemos modifcado nada `
 
 22) Crear una rama _title_ y cambiarse a esa rama.
 
@@ -93,21 +103,37 @@ y líbranos de <em>SVN</em><br />
 
 25) Dibujar el diagrama.
 
+` git log --graph `
+
 26) Hacer un merge “no fast-forward” de _title_ en _master_ (_master_ absorbe a _title_).
+
+` Sí, porque title sólo está un commit por delante de master y forman una lista `
 
 27) Deshacer el merge (sin perder los cambios del working copy).
 
+` git reset HEAD~1 `
+
 28) Descartar los cambios.
+
+` git restore <archivo> `
 
 29) Eliminar la rama _title_.
 
+` git branch -D title `
+
 30) Rehacer el merge que hemos deshecho.
+
+` git refog y luego git reset —hard HASH_COMMIT `
 
 31) Volver a master y eliminar el resto de ramas.
 
 32) Volver al commit inicial cuando se creó el poema.
 
+` git refog y luego git checkout HASH_COMMIT `
+
 33) Volver al estado final, cuando pusimos título al poema.
+
+` git refog y luego git checkout HASH_COMMIT `
 
 34) Crear los siguientes tags:
 - **inicial**: en el primer commit.
