@@ -1,4 +1,5 @@
-# Ejercicio 1
+<h1 align=center>Práctica git</h1>
+
 Se deberá crear un repositorio y realizar una serie de operaciones desde la terminal y responder a las preguntas del cuestionario, en el que se pregunta por comandos utilizados en ciertos pasos.
 
 Los pasos a ejecutar son los siguientes (los pasos en **negrita** indican que hay una pregunta asociada):
